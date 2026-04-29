@@ -33,17 +33,16 @@ int proses (const void *x, const void *y){
 
 int main() {
     int n;
-    int cetakhasil;
     scanf("%d",&n);
 
     Artefak artefak[n];
 
-    qsort(artefak,n,sizeof(Artefak),proses);
+
     int i;
     for (i = 0; i < n; i++) {
         scanf("%s %s %d %d", artefak[i].kategori, artefak[i].nama, &artefak[i].tahun, &artefak[i].nilai);
     }
-
+    qsort(artefak,n,sizeof(Artefak),proses);
     for (i = 0; i < n; i++) {
         printf("%s %s %d %d\n", artefak[i].kategori, artefak[i].nama, artefak[i].tahun, artefak[i].nilai);
     }
