@@ -33,13 +33,13 @@ int main() {
 
     Artefak artefak[n];
  
-    for (i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         scanf("%s %s %d %d", artefak[i].kategori, artefak[i].nama, &artefak[i].tahun, &artefak[i].nilai);
     }
 
     qsort(artefak,n,sizeof(Artefak),proses);
 
-    for (i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         printf("%s %s %d %d\n", artefak[i].kategori, artefak[i].nama, artefak[i].tahun, artefak[i].nilai);
     }
 
