@@ -22,8 +22,8 @@ int proses (const void *x, const void *y){
     Artefak *a2 = (Artefak *) y;
     int cmpkat = strcmp(a1->kategori, a2->kategori);
     if (cmpkat != 0) return cmpkat;
-    if (a1->tahun != a2->tahun) return (a1->tahun - a2->tahun); 
-    if (a1->nilai != a2->nilai) return (a2->nilai - a1->nilai);
+    if (a1->tahun != a2->tahun) return (a2->tahun - a1->tahun); 
+    if (a1->nilai != a2->nilai) return (a1->nilai - a2->nilai);
     return strcmp(a1->nama, a2->nama);
 }
 
@@ -32,16 +32,19 @@ int main() {
     scanf("%d",&n);
 
     Artefak artefak[n];
- 
-    for (int i = 0; i < n; i++) {
-        scanf("%s %s %d %d", artefak[i].kategori, artefak[i].nama, &artefak[i].tahun, &artefak[i].nilai);
+
+    int i;
+    for (i = 0; i < n; i++) {
+        scanf("%s %s %d %d", artefak[i].nama, artefak[i].kategori, &artefak[i].tahun, &artefak[i].nilai);
     }
 
     qsort(artefak,n,sizeof(Artefak),proses);
 
-    for (int i = 0; i < n; i++) {
-        printf("%s %s %d %d\n", artefak[i].kategori, artefak[i].nama, artefak[i].tahun, artefak[i].nilai);
+    for (i = 0; i < n; i++) {
+        printf("%s %s %d %d\n", artefak[i].nama, artefak[i].kategori, artefak[i].tahun, artefak[i].nilai);
     }
 
+    return 0;
+}
     return 0;
 }
